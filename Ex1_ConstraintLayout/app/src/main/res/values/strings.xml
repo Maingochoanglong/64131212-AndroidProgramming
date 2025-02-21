@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Ex1_ConstraintLayout</string>
+    <string name="upload">UPLOAD</string>
+    <string name="discard">DISCARD</string>
+</resources>
