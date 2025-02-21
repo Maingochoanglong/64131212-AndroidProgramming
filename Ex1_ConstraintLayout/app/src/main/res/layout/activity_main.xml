@@ -29,8 +29,8 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="58dp"
+        android:layout_height="23dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="384dp"
         android:text="Camera"
@@ -39,8 +39,8 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="56dp"
+        android:layout_height="22dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="328dp"
         android:text="Setings"
@@ -75,15 +75,15 @@
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="406dp"
-        android:layout_height="349dp"
+        android:layout_width="411dp"
+        android:layout_height="317dp"
         android:text=" Singapore officially the Republic of Singapore, and often referred to as the Lion City, the Garden City, and the Red Dot, is a global city in Southeast Asia and the world's only island city-state. It lies one degree (137 km) north of the equator, at the southernmost tip of continental Asia and peninsular Malaysia, with Indonesia's Riau Islands to the south. Singapore's territory consists of the diamond- shaped main island and 62 islets."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.869" />
+        app:layout_constraintVertical_bias="0.82" />
 
     <Button
         android:id="@+id/button3"
