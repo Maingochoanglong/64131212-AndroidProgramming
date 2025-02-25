@@ -5,105 +5,152 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="@color/design_default_color_on_secondary"
+    android:contentDescription="@string/placeholder"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="413dp"
-        android:layout_height="236dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/_f80738b_ac20_4b3b_ae78_1672a71a8ff7" />
+        tools:ignore="TextSizeCheck">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="113dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="260dp"
-        android:text="Singapore"
-        app:autoSizeTextType="uniform"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="0dp"
+            android:layout_height="231dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:contentDescription="@string/singapore_description"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/barrier"
+            app:srcCompat="@drawable/singapore" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="58dp"
-        android:layout_height="23dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="384dp"
-        android:text="Camera"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/favorite"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/rounded_background"
+            android:contentDescription="@string/fab_content_description"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3"
+            app:srcCompat="@drawable/ic_star" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="56dp"
-        android:layout_height="22dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="328dp"
-        android:text="Setings"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/upload"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-    <EditText
-        android:id="@+id/editTextText"
-        android:layout_width="215dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="316dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Lecia M Typ 204"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/discard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="21dp"
+            android:text="@string/discard"
+            app:layout_constraintBaseline_toBaselineOf="@+id/upload"
+            app:layout_constraintEnd_toStartOf="@+id/upload" />
 
-    <EditText
-        android:id="@+id/editTextText2"
-        android:layout_width="215dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="364dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="f/4 16s IOS 200"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:labelFor="@id/editCamera_value"
+            android:text="@string/camera"
+            android:textSize="16sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/editCamera_value"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="411dp"
-        android:layout_height="317dp"
-        android:text=" Singapore officially the Republic of Singapore, and often referred to as the Lion City, the Garden City, and the Red Dot, is a global city in Southeast Asia and the world's only island city-state. It lies one degree (137 km) north of the equator, at the southernmost tip of continental Asia and peninsular Malaysia, with Indonesia's Riau Islands to the south. Singapore's territory consists of the diamond- shaped main island and 62 islets."
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.82" />
+        <TextView
+            android:id="@+id/settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="24dp"
+            android:labelFor="@id/editCamera_settings"
+            android:text="@string/settings"
+            android:textSize="16sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/editCamera_settings"
+            app:layout_constraintEnd_toStartOf="@+id/editCamera_settings"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/upload"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <TextView
+            android:id="@+id/singapore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/singapore"
+            android:textSize="24sp"
+            app:autoSizeTextType="none"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3"
+            tools:ignore="TextSizeCheck" />
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="@string/discard"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.532"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/singapore_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="211dp"
+            android:layout_marginBottom="209dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/singapore_description"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="left"
+            app:constraint_referenced_ids="editCamera_value,editCamera_settings" />
+
+        <EditText
+            android:id="@+id/editCamera_value"
+            android:layout_width="214dp"
+            android:layout_height="0dp"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:text="@string/camera_value"
+            app:layout_constraintBottom_toTopOf="@+id/editCamera_settings"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/singapore"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <EditText
+            android:id="@+id/editCamera_settings"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="98dp"
+            android:layout_marginBottom="39dp"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:text="@string/camera_settings"
+            app:layout_constraintBottom_toTopOf="@+id/singapore_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/settings" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
