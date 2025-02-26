@@ -21,4 +21,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "Ex4_AddSubMulDiv_Onclick"
 include(":app")
- 
