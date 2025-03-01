@@ -80,42 +80,38 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnCong"
+            android:id="@+id/button_Cong"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight="1"
-            android:onClick="XuLyCong"
             android:text="@string/cong"
             android:textSize="20sp" />
 
         <Button
-            android:id="@+id/btnTru"
+            android:id="@+id/button_Tru"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight="1"
-            android:onClick="XuLyTru"
             android:text="@string/tru"
             android:textSize="20sp" />
 
         <Button
-            android:id="@+id/btNhan"
+            android:id="@+id/button_Nhan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight="1"
-            android:onClick="XuLyNhan"
             android:text="@string/nhan"
             android:textSize="20sp" />
 
         <Button
-            android:id="@+id/btnChia"
+            android:id="@+id/button_Chia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight="1"
-            android:onClick="XuLyChia"
             android:text="@string/chia"
             android:textSize="20sp" />
     </LinearLayout>
