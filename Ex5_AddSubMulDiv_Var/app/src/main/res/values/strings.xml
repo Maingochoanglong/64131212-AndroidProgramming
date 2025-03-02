@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Ex5_AddSubMulDiv_Var</string>
+    <string name="ten">PHÉP TÍNH SỐ HỌC</string>
+    <string name="a">A: </string>
+    <string name="b">B: </string>
+    <string name="ket_qua">Kết Quả: </string>
+    <string name="cong">+</string>
+    <string name="tru">-</string>
+    <string name="nhan">*</string>
+    <string name="chia">/</string>
+</resources>
