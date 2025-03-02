@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Ex_BMI_Calculator</string>
+    <string name="weight">Weight</string>
+    <string name="height">Height</string>
+    <string name="calculatebmi">Calculate BMI</string>
+    <string name="your_weight">Your Weight</string>
+    <string name="your_height">Your Height</string>
+    <string name="bmi">BMI: </string>
+    <string name="classification">Classification</string>
+    <string name="who_bmi">WHO BMI</string>
+    <string name="idi_wpro_bmi">IDI &amp; WPRO BMI</string>
+    <string name="bmi_score">BMI Score</string>
+    <string name="error">Error!</string>
+    <string name="underweight">Cân nặng thấp (gầy)</string>
+    <string name="normal_weight">Bình thường</string>
+    <string name="overweight">Thừa cân</string>
+    <string name="obesity_class_1">Tiền béo phì</string>
+    <string name="obesity_class_2">Béo phì độ I</string>
+    <string name="obesity_class_3">Béo phì độ II</string>
+</resources>
