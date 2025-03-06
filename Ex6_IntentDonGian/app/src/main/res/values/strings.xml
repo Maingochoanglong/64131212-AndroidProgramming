@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Ex6_IntentDonGian</string>
+    <string name="man_hinh_chinh">MÀN HÌNH CHÍNH Ở ĐÂY</string>
+    <string name="man_hinh_2">ĐÂY LÀ MÀN HÌNH 2</string>
+    <string name="man_hinh_3">ĐÂY LÀ MÀN HÌNH 3</string>
+    <string name="nut_man_hinh_2">MÀN HÌNH 2</string>
+    <string name="nut_man_hinh_3">MÀN HÌNH 3</string>
+</resources>

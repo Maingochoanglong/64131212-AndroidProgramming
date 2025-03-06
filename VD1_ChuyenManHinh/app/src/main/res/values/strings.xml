@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">VD1_ChuyenManHinh</string>
+    <string name="home">MÀN HÌNH TRANG CHỦ</string>
+    <string name="page_two">BẠN ĐANG Ở MÀN HÌNH THỨ 2</string>
+    <string name="button_next_page">SANG MÀN HÌNH KHÁC</string>
+    <string name="button_page_to_home_page">QUAY LẠI TRANG CHỦ</string>
+</resources>
