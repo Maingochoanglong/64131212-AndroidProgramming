@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Ex7_IntentLogin</string>
+    <string name="ten">CNTT1-NTU QUIZ</string>
+    <string name="man_hinh_chinh">MÀN HÌNH CHÍNH</string>
+    <string name="man_hinh_dang_nhap">MÀN HÌNH ĐĂNG NHẬP</string>
+    <string name="dang_nhap">ĐĂNG NHẬP</string>
+    <string name="xac_nhan">XÁC NHẬN</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="useremail">User Email</string>
+    <string name="chao_mung">CHÀO MỪNG</string>
+    <string name="quiz_1">Quiz 1</string>
+    <string name="quiz_2">Quiz 2</string>
+    <string name="quiz_3">Quiz 3</string>
+    <string name="avatar">avatar</string>
+</resources>
