@@ -1,17 +1,17 @@
-# 📌 64131942 - Android Programming
+# 64131212 - Android Programming
 
-## 📌 Giới thiệu
+## Giới thiệu
 Đây là kho lưu trữ chứa các bài thực hành và bài tập bổ sung trong quá trình học lập trình Android. Toàn bộ mã nguồn được đẩy lên server thường xuyên để giảng viên theo dõi tiến trình.
 
 ---
 
-## 📂 😽SOURCES CODE BÀI TẬP THỰC HÀNH😽
+## SOURCES CODE BÀI TẬP THỰC HÀNH
 Dưới đây là danh sách các bài tập thực hành kèm theo hình ảnh minh họa:
 
 ### 🔹 Ex1_Hello
-- 📂 [Xem mã nguồn](./HelloAndroid/app/src/main/)
+- 📂 [Xem mã nguồn](Ex1_Hello)
 - 🖼️ Hình ảnh minh họa:
-  ![Ex1_Hello](./Images/Ex1_Hello.png)
+  ![Ex1_Hello](Ex1_Hello/Ex1_Hello.PNG)
 
 ### 🔹 Ex1_ConstraintLayout
 - 📂 [Xem mã nguồn](./Ex1_ConstraintLayout/app/src/main/)
