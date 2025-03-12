@@ -69,17 +69,9 @@ Dưới đây là danh sách các bài tập thực hành kèm theo hình ảnh 
     <img src="./Images/Ex7_IntentLogin5.png" alt="Ex7_IntentLogin5" width="200"/>
     <img src="./Images/Ex7_IntentLogin5.png" alt="Ex7_IntentLogin5" width="200"/>
   </div>
----
-## 📂 😽SOURCES CODE BÀI TẬP VÍ DỤ😽
-Dưới đây là các bài tập ví dụ nhằm làm quen với lập trình Android:
 
-### 🔹 ViDu_Intent
-- 📂 [Xem mã nguồn](./ViDu_Intent/app/src/main/)
-- 🖼️ Hình ảnh minh họa:
- <div style="display: flex; justify-content: center; gap: 10px;">
-    <img src="./Images/VD_Intent1.png" alt="Vidu_Intent1" width="250"/>
-    <img src="./Images/ViDu_Intent2.png" alt="Vidu_Intent2" width="250"/>
-  </div>
+
+
 
 
 
