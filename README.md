@@ -82,39 +82,7 @@ Dưới đây là các bài tập ví dụ nhằm làm quen với lập trình A
   </div>
 
 
-## 📂 😽SOURCES CODE BÀI TẬP LÀM THÊM😽
-Dưới đây là các bài tập mở rộng nhằm nâng cao kỹ năng lập trình Android:
 
-### 🔹 BT_TinhCVvaDT
-- 📂 [Xem mã nguồn](./BT_TinhChuVi/app/src/main/)
-- 🖼️ Hình ảnh minh họa:
-  ![BT_TinhCVvaDT](./Images/BT_ChuVi.png)
 
-### 🔹 LT_TimesTables
-- 📂 [Xem mã nguồn](./LT_TimesTables/app/src/main/)
-- 🖼️ Hình ảnh minh họa:
-  ![LT_TimesTables](./Images/LT_TimesTables.png)
 
----
-
-## 📌 Hướng dẫn sử dụng
-### 🔹 Cách chạy project
-1. Clone repository về máy:
-   ```sh
-   git clone <repository_url>
-   ```
-2. Mở dự án bằng **Android Studio**.
-3. Chạy ứng dụng trên **trình giả lập** hoặc **thiết bị thật**.
-
-### 🔹 Yêu cầu hệ thống
-- Android Studio phiên bản mới nhất.
-- Java/Kotlin đã được cài đặt.
-- Thiết bị chạy Android API **26+** (hoặc trình giả lập tương ứng).
-
----
-
-## 📌 Góp ý & Liên hệ
-Nếu bạn có bất kỳ câu hỏi hoặc góp ý nào, hãy tạo **Issue** trên GitHub hoặc liên hệ trực tiếp.
-
-🚀 *Happy Coding!* 🚀
 
