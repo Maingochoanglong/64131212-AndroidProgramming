@@ -5,39 +5,39 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical"
-    android:gravity="center|top"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity">
 
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:background="#51269B"
         android:text="NTU Số 1"
         android:textColor="#FFEB3B"
-        android:textSize="20dp"
-        android:layout_marginTop="20dp"/>
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:background="#51269B"
         android:text="NTU Số 2"
         android:textColor="#FB774F"
-        android:textSize="20dp"
-        android:layout_marginTop="20dp"/>
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="200dp"
         android:layout_height="60dp"
-        android:background="#51269B"
+        android:layout_marginTop="20dp"
+        android:background="#FFEB3B"
         android:text="NTU Số 3"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        android:layout_marginTop="20dp"/>
+        android:textColor="#F44336"
+        android:textSize="20sp" />
 
 </LinearLayout>
