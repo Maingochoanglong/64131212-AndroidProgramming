@@ -68,6 +68,12 @@ Dưới đây là danh sách các bài tập thực hành kèm theo hình ảnh 
     <img src="Ex7_IntentLogin/Ex7_IntentLogin4.png" alt="Ex7_IntentLogin4" width="200"/>
   </div>
 
+### Ex_BMI_Calculator
+- 📂 [Xem mã nguồn](Ex_BMI_Calculator)
+- 🖼️ Hình ảnh minh họa:
+  ![Ex5_AddSubMulDiv_Var](Ex_BMI_Calculator/Ex_BMI_Calculator.png)
+
+
 
 
 

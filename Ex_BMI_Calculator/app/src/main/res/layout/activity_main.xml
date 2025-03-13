@@ -8,125 +8,175 @@
     tools:context=".MainActivity">
 
 
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="@string/weight"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
-        android:id="@+id/editText_Weight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:ems="10"
-        android:hint="@string/your_weight"
-        android:textColorHint="@color/material_dynamic_neutral50"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
-
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="@string/height"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_Weight" />
-
-    <EditText
-        android:id="@+id/editText_Height"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:ems="10"
-        android:hint="@string/your_height"
-        android:textColorHint="@color/material_dynamic_neutral50"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
-
-    <Button
-        android:id="@+id/button_Calculate_BMI"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="@string/calculatebmi"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_Height" />
-
-    <EditText
-        android:id="@+id/editText_BMI_Score"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:ems="10"
-        android:enabled="false"
-        android:hint="@string/bmi_score"
-        android:inputType="text"
-        android:textColor="@color/black"
-        android:textColorHint="@color/material_dynamic_neutral50"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
-
-    <EditText
-        android:id="@+id/editText_Classification"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:ems="10"
-        android:enabled="false"
-        android:hint="@string/classification"
-        android:inputType="text"
-        android:textColor="@color/black"
-        android:textColorHint="@color/material_dynamic_neutral50"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_BMI_Score" />
-
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_Calculate_BMI">
-
-        <RadioButton
-            android:id="@+id/radioButton_WHO_BMI"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/who_bmi"
+            android:background="#673AB7"
+            android:padding="5dp"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
+    </LinearLayout>
 
-        <RadioButton
-            android:id="@+id/radioButton_IDI_WPRO_BMI"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TextView
+            android:id="@+id/textView17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/idi_wpro_bmi"
+            android:layout_marginStart="168dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="168dp"
+            android:text="@string/weight"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editText_Weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="88dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="87dp"
+            android:ems="10"
+            android:hint="@string/your_weight"
+            android:importantForAutofill="no"
+            android:inputType="number|numberDecimal"
+            android:textColorHint="@color/material_dynamic_neutral50"
             android:textSize="20sp"
-            android:textStyle="bold" />
-    </RadioGroup>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="170dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="170dp"
+            android:text="@string/height"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText_Weight" />
+
+        <EditText
+            android:id="@+id/editText_Height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="88dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="87dp"
+            android:ems="10"
+            android:hint="@string/your_height"
+            android:importantForAutofill="no"
+            android:inputType="number|numberDecimal"
+            android:textColorHint="@color/material_dynamic_neutral50"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+        <Button
+            android:id="@+id/button_Calculate_BMI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="106dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="104dp"
+            android:text="@string/calculatebmi"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText_Height" />
+
+        <EditText
+            android:id="@+id/editText_BMI_Score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="88dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="87dp"
+            android:ems="10"
+            android:enabled="false"
+            android:hint="@string/bmi_score"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:textColorHint="@color/material_dynamic_neutral50"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+        <EditText
+            android:id="@+id/editText_Classification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="87dp"
+            android:ems="10"
+            android:enabled="false"
+            android:hint="@string/classification"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:textColorHint="@color/material_dynamic_neutral50"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText_BMI_Score" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="114dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="113dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_Calculate_BMI">
+
+            <RadioButton
+                android:id="@+id/radioButton_WHO_BMI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/who_bmi"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/radioButton_IDI_WPRO_BMI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/idi_wpro_bmi"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </RadioGroup>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

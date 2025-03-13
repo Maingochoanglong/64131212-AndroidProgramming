@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String giaTriDuocChon = dsNgonNguLapTrinh.get(position);
-                Toast.makeText(getApplicationContext(),giaTriDuocChon,Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this,giaTriDuocChon,Toast.LENGTH_SHORT).show();
             }
         });
     }
