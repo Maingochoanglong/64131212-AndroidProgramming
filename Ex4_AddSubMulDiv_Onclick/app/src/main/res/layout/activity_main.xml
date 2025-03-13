@@ -52,12 +52,13 @@
 
             <EditText
                 android:id="@+id/editText_soThuNhat"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:layout_weight="1"
+                android:autofillHints=""
                 android:ems="10"
                 android:hint="@string/mo_ta"
                 android:inputType="text"
@@ -84,12 +85,13 @@
 
             <EditText
                 android:id="@+id/editText_soThuHai"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:layout_weight="1"
+                android:autofillHints=""
                 android:ems="10"
                 android:hint="@string/mo_ta"
                 android:inputType="text"
@@ -171,6 +173,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:layout_weight="1"
+                android:autofillHints=""
                 android:ems="10"
                 android:enabled="false"
                 android:hint="@string/mo_ta_ket_qua"

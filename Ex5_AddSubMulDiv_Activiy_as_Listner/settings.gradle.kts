@@ -19,5 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "VD_ListView"
+rootProject.name = "Ex5_AddSubMulDiv_Activiy_as_Listner"
 include(":app")
+ 

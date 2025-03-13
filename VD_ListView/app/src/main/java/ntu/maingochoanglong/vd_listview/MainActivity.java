@@ -16,7 +16,6 @@ import androidx.core.view.WindowInsetsCompat;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    ListView listView = findViewById(R.id.listView);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,20 +27,24 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        ListView listView = findViewById(R.id.ListView);
+
         ArrayList<String> dsNgonNguLapTrinh = new ArrayList<>();
-        dsNgonNguLapTrinh.add("Python");
         dsNgonNguLapTrinh.add("C");
         dsNgonNguLapTrinh.add("C++");
+        dsNgonNguLapTrinh.add("C#");
+        dsNgonNguLapTrinh.add("Python");
         dsNgonNguLapTrinh.add("Java");
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, dsNgonNguLapTrinh);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, dsNgonNguLapTrinh);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String giaTri = adapter.getItem(position);
-                Toast.makeText(getApplicationContext(), giaTri, Toast.LENGTH_SHORT).show();
+                String giaTriDuocChon = dsNgonNguLapTrinh.get(position);
+                Toast.makeText(getApplicationContext(),giaTriDuocChon,Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -24,50 +24,48 @@ Dưới đây là danh sách các bài tập thực hành kèm theo hình ảnh 
   ![Ex2_LinearLayout](Ex2_LinearLayout/Ex2_LinearLayout.png)
 
 ### Ex3_SimpleSumApp
-- 📂 [Xem mã nguồn](./Ex3_SimpleSumApp/app/src/main/)
+- 📂 [Xem mã nguồn](Ex3_SimpleSumApp)
 - 🖼️ Hình ảnh minh họa:
-  ![Ex3_SimpleSumApp](./Images/Ex3_SimpleSumApp.png)
+  ![Ex3_SimpleSumApp](Ex3_SimpleSumApp/Ex3_SimpleSumApp.png)
 
 ### Ex4_AddSubMulDiv_Onclick
-- 📂 [Xem mã nguồn](./Ex4_AddSubMulDiv_Onclick/app/src/main/)
+- 📂 [Xem mã nguồn](Ex4_AddSubMulDiv_Onclick)
 - 🖼️ Hình ảnh minh họa:
-  ![Ex4_AddSubMulDiv_Onclick](./Images/Ex4_AddSubMulDiv_Onclick.png)
+  ![Ex4_AddSubMulDiv_Onclick](Ex4_AddSubMulDiv_Onclick/Ex4_AddSubMulDiv_Onclick.png)
 
 ### Ex5_AddSubMulDiv_Anynomous
-- 📂 [Xem mã nguồn](./Ex5_AddSubMulDiv_Anynomous/app/src/main/)
+- 📂 [Xem mã nguồn](Ex5_AddSubMulDiv_Anynomous)
 - 🖼️ Hình ảnh minh họa:
-  ![Ex5_AddSubMulDiv_Anynomous](./Images/Ex5_AddSubMulDiv_Anynomous.png)
+  ![Ex5_AddSubMulDiv_Anynomous](Ex5_AddSubMulDiv_Anynomous/Ex5_AddSubMulDiv_Anynomous.png)
 
 ### Ex5_AddSubMulDiv_Var
-- 📂 [Xem mã nguồn](./Ex5_AddSubMulDiv_Var/app/src/main/)
+- 📂 [Xem mã nguồn](Ex5_AddSubMulDiv_Var)
 - 🖼️ Hình ảnh minh họa:
-  ![Ex5_AddSubMulDiv_Var](./Images/Ex5_AddSubMulDiv_Var.png)
+  ![Ex5_AddSubMulDiv_Var](Ex5_AddSubMulDiv_Var/Ex5_AddSubMulDiv_Var.png)
 
-### Ex5_AddSubMulDiv_ActivityListenner
-- 📂 [Xem mã nguồn](./Ex5_AddSubMulDiv_ActivityListenner/app/src/main/)
+### Ex5_AddSubMulDiv_Activiy_as_Listner
+- 📂 [Xem mã nguồn](Ex5_AddSubMulDiv_Activiy_as_Listner)
 - 🖼️ Hình ảnh minh họa:
-  ![Ex5_AddSubMulDiv_ActivityListenner](./Images/Ex5_AddSubMulDiv_ActivityListenner.png)
+  ![Ex5_AddSubMulDiv_Var](Ex5_AddSubMulDiv_Activiy_as_Listner/Ex5_AddSubMulDiv_Activiy_as_Listner.png)
 
 ### Ex6_IntentDonGian
-- 📂 [Xem mã nguồn](./Ex6_IntentDonGian/app/src/main/)
+- 📂 [Xem mã nguồn](Ex6_IntentDonGian)
 - 🖼️ Hình ảnh minh họa:
   <div style="display: flex; justify-content: center; gap: 10px;">
-    <img src="./Images/Ex6_IntentDonGian1.png" alt="Ex6_IntentDonGian1" width="250"/>
-    <img src="./Images/Ex6_IntentDonGian2.png" alt="Ex6_IntentDonGian2" width="250"/>
-    <img src="./Images/Ex6_IntentDonGian3.png" alt="Ex6_IntentDonGian3" width="250"/>
+    <img src="Ex6_IntentDonGian/Ex6_IntentDonGian1.png" alt="Ex6_IntentDonGian1" width="250"/>
+    <img src="Ex6_IntentDonGian/Ex6_IntentDonGian2.png" alt="Ex6_IntentDonGian2" width="250"/>
+    <img src="Ex6_IntentDonGian/Ex6_IntentDonGian3.png" alt="Ex6_IntentDonGian3" width="250"/>
   </div>
 
 
-### 🔹 Ex7_IntentLogin
-- 📂 [Xem mã nguồn](./Ex7_IntentLogin/app/src/main/)
+### Ex7_IntentLogin
+- 📂 [Xem mã nguồn](Ex7_IntentLogin)
 - 🖼️ Hình ảnh minh họa:
- <div style="display: flex; justify-content: center; gap: 10px;">
-    <img src="./Images/Ex7_IntentLogin1.png" alt="Ex7_IntentLogin1" width="200"/>
-    <img src="./Images/Ex7_IntentLogin2.png" alt="Ex7_IntentLogin2" width="200"/>
-    <img src="./Images/Ex7_IntentLogin3.png" alt="Ex7_IntentLogin3" width="200"/>
-    <img src="./Images/Ex7_IntentLogin4.png" alt="Ex7_IntentLogin4" width="200"/>
-    <img src="./Images/Ex7_IntentLogin5.png" alt="Ex7_IntentLogin5" width="200"/>
-    <img src="./Images/Ex7_IntentLogin5.png" alt="Ex7_IntentLogin5" width="200"/>
+  <div style="display: flex; justify-content: center; gap: 10px;">
+    <img src="Ex7_IntentLogin/Ex7_IntentLogin1.png" alt="Ex7_IntentLogin1" width="200"/>
+    <img src="Ex7_IntentLogin/Ex7_IntentLogin2.png" alt="Ex7_IntentLogin2" width="200"/>
+    <img src="Ex7_IntentLogin/Ex7_IntentLogin3.png" alt="Ex7_IntentLogin3" width="200"/>
+    <img src="Ex7_IntentLogin/Ex7_IntentLogin4.png" alt="Ex7_IntentLogin4" width="200"/>
   </div>
 
 

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Ex5_AddSubMulDiv_Activiy_as_Listner</string>
+    <string name="so_thu_nhat">Số Thứ Nhất: </string>
+    <string name="so_thu_hai">Số Thứ Hai: </string>
+    <string name="ket_qua">Kết Quả: </string>
+    <string name="mo_ta">Mời Nhập Một Con Số Ở Đây</string>
+    <string name="mo_ta_ket_qua">Nơi Hiện Kết Quả</string>
+    <string name="cong">+</string>
+    <string name="tru">-</string>
+    <string name="nhan">*</string>
+    <string name="chia">/</string>
+</resources>
