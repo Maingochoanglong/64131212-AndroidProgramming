@@ -73,6 +73,11 @@ Dưới đây là danh sách các bài tập thực hành kèm theo hình ảnh 
 - 🖼️ Hình ảnh minh họa:
   ![Ex5_AddSubMulDiv_Var](Ex_BMI_Calculator/Ex_BMI_Calculator.png)
 
+### Ex_Simple_Login_Page
+- 📂 [Xem mã nguồn](Ex_Simple_Login_Page)
+- 🖼️ Hình ảnh minh họa:
+  ![Ex5_AddSubMulDiv_Var](Ex_Simple_Login_Page/Ex_Simple_Login_Page.png)
+
 
 
 
