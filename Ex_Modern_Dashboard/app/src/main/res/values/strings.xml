@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Ex_Modern_Dashboard</string>
+    <string name="amazon">Amazon</string>
+    <string name="shop_from_a_to_z">Shop from A to Z</string>
+    <string name="clothing">Clothing</string>
+    <string name="electronics">Electronics</string>
+    <string name="todo">TODO</string>
+    <string name="beauty">Beauty</string>
+    <string name="home">Home</string>
+    <string name="groceries">Groceries</string>
+    <string name="pharmacy">Pharmacy</string>
 </resources>
