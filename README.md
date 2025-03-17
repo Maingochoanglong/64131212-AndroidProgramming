@@ -11,7 +11,7 @@ Dưới đây là danh sách các bài tập thực hành kèm theo hình ảnh 
 ### Ex1_Hello
 - 📂 [Xem mã nguồn](Ex1_Hello)
 - 🖼️ Hình ảnh minh họa:
-  [Ex1_Hello](Ex1_Hello/Ex1_Hello.PNG)
+  ![Ex1_Hello](Ex1_Hello/Ex1_Hello.PNG)
 
 ### Ex1_ConstraintLayout
 - 📂 [Xem mã nguồn](Ex1_ConstraintLayout)
@@ -31,7 +31,7 @@ Dưới đây là danh sách các bài tập thực hành kèm theo hình ảnh 
 ### Ex4_AddSubMulDiv_Onclick
 - 📂 [Xem mã nguồn](Ex4_AddSubMulDiv_Onclick)
 - 🖼️ Hình ảnh minh họa:
-  ![Ex4_AddSubMulDiv_Onclick](Ex4_AddSubMulDiv_Onclick/Ex4_AddSubMulDiv_Onclick.png)
+  ![Ex4_AddSubMulDiv_Onclick](Ex4_AddSubMulDiv_Onclick/image.png)
 
 ### Ex5_AddSubMulDiv_Anynomous
 - 📂 [Xem mã nguồn](Ex5_AddSubMulDiv_Anynomous)
@@ -67,11 +67,11 @@ Dưới đây là danh sách các bài tập thực hành kèm theo hình ảnh 
 ### Ex7_IntentLogin
 - 📂 [Xem mã nguồn](Ex7_IntentLogin)
 - 🖼️ Hình ảnh minh họa:
-  <div style="display: flex; flex-wrap: nowrap; justify-content: center; gap: 10px;">
-    <img src="Ex7_IntentLogin/Ex7_IntentLogin1.png" alt="Ex7_IntentLogin1" width="200"/>
-    <img src="Ex7_IntentLogin/Ex7_IntentLogin2.png" alt="Ex7_IntentLogin2" width="200"/>
-    <img src="Ex7_IntentLogin/Ex7_IntentLogin3.png" alt="Ex7_IntentLogin3" width="200"/>
-    <img src="Ex7_IntentLogin/Ex7_IntentLogin4.png" alt="Ex7_IntentLogin4" width="200"/>
+  <div style="display: flex; justify-content: space-evenly; align-items: center;">
+    <img src="Ex7_IntentLogin/Ex7_IntentLogin1.png" alt="Ex7_IntentLogin1" width="155"/>
+    <img src="Ex7_IntentLogin/Ex7_IntentLogin2.png" alt="Ex7_IntentLogin2" width="155"/>
+    <img src="Ex7_IntentLogin/Ex7_IntentLogin3.png" alt="Ex7_IntentLogin3" width="155"/>
+    <img src="Ex7_IntentLogin/Ex7_IntentLogin4.png" alt="Ex7_IntentLogin4" width="155"/>
   </div>
 
 ### VD_ListView
@@ -92,7 +92,7 @@ Dưới đây là danh sách các bài tập thực hành kèm theo hình ảnh 
 ### Ex_Modern_Dashboard
 - 📂 [Xem mã nguồn](Ex_Modern_Dashboard)
 - 🖼️ Hình ảnh minh họa:
-  <div style="display: flex; flex-wrap: nowrap; justify-content: center; gap: 10px;">
+  <div style="display: flex; justify-content: space-evenly; align-items: center;">
     <img src="Ex_Modern_Dashboard/Ex_Modern_Dashboard1.png" alt="Ex_Modern_Dashboard1" width="200"/>
     <img src="Ex_Modern_Dashboard/Ex_Modern_Dashboard2.png" alt="Ex_Modern_Dashboard2" width="200"/>
   </div>
