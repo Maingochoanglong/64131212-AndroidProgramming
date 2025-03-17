@@ -68,16 +68,18 @@ Dưới đây là danh sách các bài tập thực hành kèm theo hình ảnh 
 - 📂 [Xem mã nguồn](Ex7_IntentLogin)
 - 🖼️ Hình ảnh minh họa:
   <div style="display: flex; justify-content: space-evenly; align-items: center;">
-    <img src="Ex7_IntentLogin/Ex7_IntentLogin1.png" alt="Ex7_IntentLogin1" />
-    <img src="Ex7_IntentLogin/Ex7_IntentLogin2.png" alt="Ex7_IntentLogin2" />
-    <img src="Ex7_IntentLogin/Ex7_IntentLogin3.png" alt="Ex7_IntentLogin3" />
-    <img src="Ex7_IntentLogin/Ex7_IntentLogin4.png" alt="Ex7_IntentLogin4" />
+    <img src="Ex7_IntentLogin/Ex7_IntentLogin1.png" alt="Ex7_IntentLogin1" width="190"/>
+    <img src="Ex7_IntentLogin/Ex7_IntentLogin2.png" alt="Ex7_IntentLogin2" width="190"/>
+    <img src="Ex7_IntentLogin/Ex7_IntentLogin3.png" alt="Ex7_IntentLogin3" width="190"/>
+    <img src="Ex7_IntentLogin/Ex7_IntentLogin4.png" alt="Ex7_IntentLogin4" width="190"/>
   </div>
 
 ### VD_ListView
 - 📂 [Xem mã nguồn](VD_ListView)
 - 🖼️ Hình ảnh minh họa:
-  ![Ex5_AddSubMulDiv_Var](VD_ListView/VD_ListView.png)
+  <div style="display: flex; justify-content: space-evenly; align-items: center;">
+    <img src="VD_ListView/VD_ListView.png" alt="VD_ListView" width="200"/>
+  </div>
 
 ### Ex_BMI_Calculator
 - 📂 [Xem mã nguồn](Ex_BMI_Calculator)
