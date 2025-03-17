@@ -94,7 +94,7 @@ Dưới đây là danh sách các bài tập thực hành kèm theo hình ảnh 
 ### Ex_Modern_Dashboard
 - 📂 [Xem mã nguồn](Ex_Modern_Dashboard)
 - 🖼️ Hình ảnh minh họa:
-  <div style="display: flex; justify-content: space-evenly; align-items: center;">
+  <div style="display: flex; justify-content: space-evenly; align-items: center;" width="100%">
     <img src="Ex_Modern_Dashboard/Ex_Modern_Dashboard1.png" alt="Ex_Modern_Dashboard1" width="200"/>
     <img src="Ex_Modern_Dashboard/Ex_Modern_Dashboard2.png" alt="Ex_Modern_Dashboard2" width="200"/>
   </div>
