@@ -11,7 +11,7 @@ Dưới đây là danh sách các bài tập thực hành kèm theo hình ảnh 
 ### Ex1_Hello
 - 📂 [Xem mã nguồn](Ex1_Hello)
 - 🖼️ Hình ảnh minh họa:
-  ![Ex1_Hello](Ex1_Hello/Ex1_Hello.PNG)
+  [Ex1_Hello](Ex1_Hello/Ex1_Hello.PNG)
 
 ### Ex1_ConstraintLayout
 - 📂 [Xem mã nguồn](Ex1_ConstraintLayout)
@@ -48,6 +48,12 @@ Dưới đây là danh sách các bài tập thực hành kèm theo hình ảnh 
 - 🖼️ Hình ảnh minh họa:
   ![Ex5_AddSubMulDiv_Var](Ex5_AddSubMulDiv_Activiy_as_Listner/Ex5_AddSubMulDiv_Activiy_as_Listner.png)
 
+### VD1_ChuyenManHinh
+- 📂 [Xem mã nguồn](VD1_ChuyenManHinh)
+- 🖼️ Hình ảnh minh họa:
+  ![Ex5_AddSubMulDiv_Var](VD1_ChuyenManHinh/VD1_ChuyenManHinh1.png)
+  ![Ex5_AddSubMulDiv_Var](VD1_ChuyenManHinh/VD1_ChuyenManHinh2.png)
+
 ### Ex6_IntentDonGian
 - 📂 [Xem mã nguồn](Ex6_IntentDonGian)
 - 🖼️ Hình ảnh minh họa:
@@ -61,12 +67,17 @@ Dưới đây là danh sách các bài tập thực hành kèm theo hình ảnh 
 ### Ex7_IntentLogin
 - 📂 [Xem mã nguồn](Ex7_IntentLogin)
 - 🖼️ Hình ảnh minh họa:
-  <div style="display: flex; justify-content: center; gap: 10px;">
+  <div style="display: flex; flex-wrap: nowrap; justify-content: center; gap: 10px;">
     <img src="Ex7_IntentLogin/Ex7_IntentLogin1.png" alt="Ex7_IntentLogin1" width="200"/>
     <img src="Ex7_IntentLogin/Ex7_IntentLogin2.png" alt="Ex7_IntentLogin2" width="200"/>
     <img src="Ex7_IntentLogin/Ex7_IntentLogin3.png" alt="Ex7_IntentLogin3" width="200"/>
     <img src="Ex7_IntentLogin/Ex7_IntentLogin4.png" alt="Ex7_IntentLogin4" width="200"/>
   </div>
+
+### VD_ListView
+- 📂 [Xem mã nguồn](VD_ListView)
+- 🖼️ Hình ảnh minh họa:
+  ![Ex5_AddSubMulDiv_Var](VD_ListView/VD_ListView.png)
 
 ### Ex_BMI_Calculator
 - 📂 [Xem mã nguồn](Ex_BMI_Calculator)
@@ -78,6 +89,13 @@ Dưới đây là danh sách các bài tập thực hành kèm theo hình ảnh 
 - 🖼️ Hình ảnh minh họa:
   ![Ex5_AddSubMulDiv_Var](Ex_Simple_Login_Page/Ex_Simple_Login_Page.png)
 
+### Ex_Modern_Dashboard
+- 📂 [Xem mã nguồn](Ex_Modern_Dashboard)
+- 🖼️ Hình ảnh minh họa:
+  <div style="display: flex; flex-wrap: nowrap; justify-content: center; gap: 10px;">
+    <img src="Ex_Modern_Dashboard/Ex_Modern_Dashboard1.png" alt="Ex_Modern_Dashboard1" width="200"/>
+    <img src="Ex_Modern_Dashboard/Ex_Modern_Dashboard2.png" alt="Ex_Modern_Dashboard2" width="200"/>
+  </div>
 
 
 

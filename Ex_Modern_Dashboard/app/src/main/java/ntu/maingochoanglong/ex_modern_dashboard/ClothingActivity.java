@@ -1,6 +1,8 @@
 package ntu.maingochoanglong.ex_modern_dashboard;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,5 +22,10 @@ public class ClothingActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
+
+    public void troVeTrangChu(View v) {
+        Intent intent = new Intent(ClothingActivity.this, MainActivity.class);
+        startActivity(intent);
     }
 }
