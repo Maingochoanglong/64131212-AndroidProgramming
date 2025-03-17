@@ -68,10 +68,10 @@ Dưới đây là danh sách các bài tập thực hành kèm theo hình ảnh 
 - 📂 [Xem mã nguồn](Ex7_IntentLogin)
 - 🖼️ Hình ảnh minh họa:
   <div style="display: flex; justify-content: space-evenly; align-items: center;">
-    <img src="Ex7_IntentLogin/Ex7_IntentLogin1.png" alt="Ex7_IntentLogin1" width="155"/>
-    <img src="Ex7_IntentLogin/Ex7_IntentLogin2.png" alt="Ex7_IntentLogin2" width="155"/>
-    <img src="Ex7_IntentLogin/Ex7_IntentLogin3.png" alt="Ex7_IntentLogin3" width="155"/>
-    <img src="Ex7_IntentLogin/Ex7_IntentLogin4.png" alt="Ex7_IntentLogin4" width="155"/>
+    <img src="Ex7_IntentLogin/Ex7_IntentLogin1.png" alt="Ex7_IntentLogin1" />
+    <img src="Ex7_IntentLogin/Ex7_IntentLogin2.png" alt="Ex7_IntentLogin2" />
+    <img src="Ex7_IntentLogin/Ex7_IntentLogin3.png" alt="Ex7_IntentLogin3" />
+    <img src="Ex7_IntentLogin/Ex7_IntentLogin4.png" alt="Ex7_IntentLogin4" />
   </div>
 
 ### VD_ListView
