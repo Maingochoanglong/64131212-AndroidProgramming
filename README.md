@@ -58,20 +58,21 @@ Dưới đây là danh sách các bài tập thực hành kèm theo hình ảnh 
 - 📂 [Xem mã nguồn](Ex6_IntentDonGian)
 - 🖼️ Hình ảnh minh họa:
   <div style="display: flex; justify-content: center; gap: 10px;">
-    <img src="Ex6_IntentDonGian/Ex6_IntentDonGian1.png" alt="Ex6_IntentDonGian1" width="200"/>
-    <img src="Ex6_IntentDonGian/Ex6_IntentDonGian2.png" alt="Ex6_IntentDonGian2" width="200"/>
-    <img src="Ex6_IntentDonGian/Ex6_IntentDonGian3.png" alt="Ex6_IntentDonGian3" width="200"/>
+    <img src="Ex6_IntentDonGian/Ex6_IntentDonGian1.png" alt="Ex6_IntentDonGian1" width="250"/>
+    <img src="Ex6_IntentDonGian/Ex6_IntentDonGian2.png" alt="Ex6_IntentDonGian2" width="250"/>
+    <img src="Ex6_IntentDonGian/Ex6_IntentDonGian3.png" alt="Ex6_IntentDonGian3" width="250"/>
   </div>
 
 
 ### Ex7_IntentLogin
 - 📂 [Xem mã nguồn](Ex7_IntentLogin)
 - 🖼️ Hình ảnh minh họa:
+  <div style="display: flex; justify-content: space-evenly; align-items: center;">
     <img src="Ex7_IntentLogin/Ex7_IntentLogin1.png" alt="Ex7_IntentLogin1" width="190"/>
     <img src="Ex7_IntentLogin/Ex7_IntentLogin2.png" alt="Ex7_IntentLogin2" width="190"/>
     <img src="Ex7_IntentLogin/Ex7_IntentLogin3.png" alt="Ex7_IntentLogin3" width="190"/>
     <img src="Ex7_IntentLogin/Ex7_IntentLogin4.png" alt="Ex7_IntentLogin4" width="190"/>
-  
+  </div>
 
 ### VD_ListView
 - 📂 [Xem mã nguồn](VD_ListView)
@@ -88,7 +89,7 @@ Dưới đây là danh sách các bài tập thực hành kèm theo hình ảnh 
 ### Ex_Simple_Login_Page
 - 📂 [Xem mã nguồn](Ex_Simple_Login_Page)
 - 🖼️ Hình ảnh minh họa:
-  ![Ex5_AddSubMulDiv_Var](Ex_Simple_Login_Page/Ex_Simple_Login_Page.png)
+  <img src="Ex_Simple_Login_Page/Ex_Simple_Login_Page.png" alt="Mô tả ảnh" style="display: block; margin: 0 auto;" width="200>
 
 ### Ex_Modern_Dashboard
 - 📂 [Xem mã nguồn](Ex_Modern_Dashboard)
