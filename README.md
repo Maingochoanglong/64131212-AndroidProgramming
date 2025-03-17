@@ -89,7 +89,7 @@ Dưới đây là danh sách các bài tập thực hành kèm theo hình ảnh 
 ### Ex_Simple_Login_Page
 - 📂 [Xem mã nguồn](Ex_Simple_Login_Page)
 - 🖼️ Hình ảnh minh họa:
-  <img src="Ex_Simple_Login_Page/Ex_Simple_Login_Page.png" alt="Mô tả ảnh" style="display: block; margin: 0 auto;" width="200>
+  <img src="Ex_Simple_Login_Page/Ex_Simple_Login_Page.png" alt="Mô tả ảnh" style="display: block; margin: 0 auto;" width="200"/>
 
 ### Ex_Modern_Dashboard
 - 📂 [Xem mã nguồn](Ex_Modern_Dashboard)
