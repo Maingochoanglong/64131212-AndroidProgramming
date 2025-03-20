@@ -101,6 +101,18 @@ Dưới đây là danh sách các bài tập thực hành kèm theo hình ảnh 
     <img src="Ex_Modern_Dashboard/Ex_Modern_Dashboard2.png" alt="Ex_Modern_Dashboard2" width="200"/>
   </div>
 
+### VD_Math
+- 📂 [Xem mã nguồn](VD_Math)
+- 🖼️ Hình ảnh minh họa:
+  <div style="display: flex;">
+    <img src="VD_Math/VD_Math1.png" alt="VD_Math1" width="190"/>
+    <img src="VD_Math/VD_Math2.png" alt="VD_Math2" width="190"/>
+    <img src="VD_Math/VD_Math3.png" alt="VD_Math3" width="190"/>
+  </div>
+- Mô tả:
+- Nút Delete xóa lần lượt từng chữ số trong ô kết quả từ phải qua trái
+- Nút Restart random số A và B mới
+- Nút Check kiểm tra kết quả của phép cộng nếu đúng sẽ đổi sang mau xanh sai thì màu đỏ
 
 
 
