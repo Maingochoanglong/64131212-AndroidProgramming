@@ -33,6 +33,26 @@ public class MainActivity extends AppCompatActivity {
 
         TimDieuKien();
         XuLyNutSo();
+        XuLyXoaSo();
+        getAB();
+        XuLyNutRestart();
+        XuLyNutCheck();
+    }
+
+    void getAB() {
+        editText_NumA.setText(String.valueOf((int)(Math.random() * 20)));
+        editText_NumB.setText(String.valueOf((int)(Math.random() * 20)));
+    }
+
+    void XuLyNutRestart() {
+        button_Restart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getAB();
+                editText_KetQua.setBackgroundResource(R.drawable.custom_edt);
+                editText_KetQua.setText("");
+            }
+        });
     }
 
     void XuLyNutSo() {
@@ -48,6 +68,33 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    void XuLyNutCheck() {
+        button_Check.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (String.valueOf(Integer.parseInt(editText_NumA.getText().toString()) + Integer.parseInt(editText_NumB.getText().toString())).equals(editText_KetQua.getText().toString())) {
+                    editText_KetQua.setBackgroundResource(R.drawable.cuttom_edt_success);
+                } else {
+                    editText_KetQua.setBackgroundResource(R.drawable.custom_edt_error);
+                }
+            }
+        });
+    }
+
+    void XuLyXoaSo() {
+        button_Delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!editText_KetQua.getText().toString().isEmpty()) {
+                    editText_KetQua.setText(
+                            editText_KetQua.getText().delete(editText_KetQua.getText().length() - 1, editText_KetQua.getText().length())
+                    );
+                    editText_KetQua.setBackgroundResource(R.drawable.custom_edt);
+                }
+            }
+        });
     }
 
     void TimDieuKien() {
