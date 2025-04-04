@@ -14,8 +14,8 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     LandScapeAdapter landScapeAdapter;
-    ArrayList<LandScape> landScapeArrayList;
-    RecyclerView recyclerViewLandScape;
+    ArrayList<LandScape> recyclerViewData;
+    RecyclerView recyclerViewLand;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,22 +27,24 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        landScapeArrayList = getLandScapeArrayList();
-        recyclerViewLandScape = findViewById(R.id.recyclerViewLand);
+        recyclerViewData = getRecyclerViewData();
+        recyclerViewLand = findViewById(R.id.recyclerLand);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
-        recyclerViewLandScape.setLayoutManager(layoutManager);
-        landScapeAdapter = new LandScapeAdapter(this, landScapeArrayList);
-        recyclerViewLandScape.setAdapter(landScapeAdapter);
+        recyclerViewLand.setLayoutManager(layoutManager);
+        landScapeAdapter = new LandScapeAdapter(this, recyclerViewData);
+        recyclerViewLand.setAdapter(landScapeAdapter);
     }
 
-    ArrayList<LandScape> getLandScapeArrayList() {
-        ArrayList<LandScape> landScapes = new ArrayList<>();
-        LandScape landScape = new LandScape("img","Hồ Gươm");
-        LandScape landScape1 = new LandScape("img_1","Cung Điện Buckingham");
-        LandScape landScape2 = new LandScape("img_2","Tháp Effel");
-        landScapes.add(landScape);
-        landScapes.add(landScape1);
-        landScapes.add(landScape2);
-        return landScapes;
+    ArrayList<LandScape> getRecyclerViewData() {
+        ArrayList<LandScape> duLieu = new ArrayList<>();
+        LandScape landScape1 = new LandScape("img1","Cột Cờ Hà Nội");
+        LandScape landScape2 = new LandScape("img2","Tháp Eiffel");
+        LandScape landScape3 = new LandScape("img3","Cung Điện Buckingham");
+        duLieu.add(landScape1);
+        duLieu.add(landScape2);
+        duLieu.add(landScape3);
+        duLieu.add(landScape3);
+        duLieu.add(landScape3);
+        return duLieu;
     }
 }

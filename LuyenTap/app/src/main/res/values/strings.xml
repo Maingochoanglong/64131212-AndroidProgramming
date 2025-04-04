@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">LuyenTap</string>
+    <string name="cau1">Câu 1</string>
+    <string name="cau2">Câu 2</string>
+    <string name="cau3">Câu 3</string>
+    <string name="cau4">Câu 4</string>
+    <string name="soA">Số A</string>
+    <string name="soB">Số B</string>
+    <string name="ketqua">Kết Quả</string>
+    <string name="tinh_tong">Tính Tổng A + B</string>
+</resources>
