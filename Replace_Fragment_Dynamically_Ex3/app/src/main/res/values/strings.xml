@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Replace_Fragment_Dynamically_Ex3</string>
+    <string name="hello_fragment">HELLO FRAGMENT</string>
+    <string name="fragment_one">FRAGMENT ONE</string>
+    <string name="fragment_two">FRAGMENT TWO</string>
+    <string name="fragment_three">FRAGMENT THREE</string>
+</resources>
