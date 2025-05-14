@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "290043129241",
+    "project_id": "tini-chat-2d158",
+    "storage_bucket": "tini-chat-2d158.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:290043129241:android:c04ae633569e261de53708",
+        "android_client_info": {
+          "package_name": "ntu.maingochoanglong.tinichat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBO3a7N3DL3pDCKEMdeomNx9pSGW3qr84"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

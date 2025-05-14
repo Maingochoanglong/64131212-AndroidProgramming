@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="ntu.maingochoanglong.tinichat" />
+                  <option name="mobileSdkAppId" value="1:290043129241:android:c04ae633569e261de53708" />
+                  <option name="projectId" value="tini-chat-2d158" />
+                  <option name="projectNumber" value="290043129241" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

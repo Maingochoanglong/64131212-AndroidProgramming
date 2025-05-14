@@ -19,5 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "TiniChat"
+rootProject.name = "TiNi Chat"
 include(":app")
+ 
