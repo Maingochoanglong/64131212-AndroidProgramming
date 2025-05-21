@@ -54,4 +54,7 @@ dependencies {
     implementation(libs.firebase.firestore)
 
     implementation(libs.multidex)
+
+    implementation(libs.retrofit)
+    implementation(libs.converter.scalars)
 }
