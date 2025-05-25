@@ -11,7 +11,6 @@ import java.util.List;
 
 import ntu.maingochoanglong.tinichat.databinding.ItemContainerReceivedMessageBinding;
 import ntu.maingochoanglong.tinichat.databinding.ItemContainerSentMessageBinding;
-import ntu.maingochoanglong.tinichat.databinding.ItemContainerUserBinding;
 import ntu.maingochoanglong.tinichat.models.ChatMessage;
 
 public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{

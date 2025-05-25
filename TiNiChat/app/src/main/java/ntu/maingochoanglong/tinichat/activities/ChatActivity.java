@@ -1,6 +1,5 @@
 package ntu.maingochoanglong.tinichat.activities;
 
-import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -79,7 +78,7 @@ public class ChatActivity extends BaseActivity {
         if (conversionId != null) {
             updateConversion(binding.inputMessage.getText().toString());
         } else {
-            HashMap<String, Object> conversion = new HashMap<>();
+            Map<String, Object> conversion = new HashMap<>();
             conversion.put(Constants.KEY_SENDER_ID, preferenceManager.getString(Constants.KEY_USER_ID));
             conversion.put(Constants.KEY_SENDER_NAME, preferenceManager.getString(Constants.KEY_NAME));
             conversion.put(Constants.KEY_SENDER_IMAGE, preferenceManager.getString(Constants.KEY_IMAGE));
@@ -127,7 +126,6 @@ public class ChatActivity extends BaseActivity {
                 .addSnapshotListener(eventListener);
     }
 
-    @SuppressLint("NotifyDataSetChanged")
     private final EventListener<QuerySnapshot> eventListener = (value, error) -> {
         if (error != null) {
             return;
@@ -194,7 +192,7 @@ public class ChatActivity extends BaseActivity {
         return new SimpleDateFormat("MMMM dd, yyyy - hh:mm a", Locale.getDefault()).format(date);
     }
 
-    private void addConversion(HashMap<String, Object> conversion) {
+    private void addConversion(Map<String, Object> conversion) {
         database.collection(Constants.KEY_COLLECTION_CONVERSATIONS)
                 .add(conversion)
                 .addOnSuccessListener(documentReference -> conversionId = documentReference.getId());
