@@ -16,6 +16,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.io.ByteArrayOutputStream;
@@ -23,6 +24,7 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 import ntu.maingochoanglong.tinichat.databinding.ActivitySignUpBinding;
 import ntu.maingochoanglong.tinichat.utilities.Constants;
@@ -66,29 +68,56 @@ public class SignUpActivity extends AppCompatActivity {
 
     private void signUp() {
         loading(true);
+
+        String email = binding.inputEmail.getText().toString().trim();
+        String password = binding.inputPassword.getText().toString().trim();
+        String name = binding.inputName.getText().toString().trim();
+
+        FirebaseAuth auth = FirebaseAuth.getInstance();
         FirebaseFirestore database = FirebaseFirestore.getInstance();
-        Map<String, Object> user = new HashMap<>();
-        user.put(Constants.KEY_NAME, binding.inputName.getText().toString());
-        user.put(Constants.KEY_EMAIL, binding.inputEmail.getText().toString());
-        user.put(Constants.KEY_PASSWORD, binding.inputPassword.getText().toString());
-        user.put(Constants.KEY_IMAGE, encodedImage);
-        database.collection(Constants.KEY_COLLECTION_USERS)
-                .add(user)
-                .addOnSuccessListener(documentReference -> {
-                    loading(false);
-                    preferenceManager.putBoolean(Constants.KEY_IS_SIGNED_IN, true);
-                    preferenceManager.putString(Constants.KEY_USER_ID, documentReference.getId());
-                    preferenceManager.putString(Constants.KEY_NAME, binding.inputName.getText().toString());
-                    preferenceManager.putString(Constants.KEY_NAME, encodedImage);
-                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    startActivity(intent);
-                })
-                .addOnFailureListener(exception -> {
-                    loading(false);
-                    showToast(exception.getMessage());
+
+        auth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        String userId = Objects.requireNonNull(auth.getCurrentUser()).getUid();
+
+                        Map<String, Object> user = new HashMap<>();
+                        user.put(Constants.KEY_NAME, name);
+                        user.put(Constants.KEY_EMAIL, email);
+                        user.put(Constants.KEY_IMAGE, encodedImage);
+
+                        database.collection(Constants.KEY_COLLECTION_USERS)
+                                .document(userId)
+                                .set(user)
+                                .addOnSuccessListener(unused -> {
+                                    loading(false);
+                                    preferenceManager.putBoolean(Constants.KEY_IS_SIGNED_IN, true);
+                                    preferenceManager.putString(Constants.KEY_USER_ID, userId);
+                                    preferenceManager.putString(Constants.KEY_NAME, name);
+                                    preferenceManager.putString(Constants.KEY_IMAGE, encodedImage);
+
+                                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                    startActivity(intent);
+                                })
+                                .addOnFailureListener(e -> {
+                                    loading(false);
+                                    showToast("Failed to save user data: " + e.getMessage());
+                                });
+                    } else {
+                        loading(false);
+                        Exception exception = task.getException();
+                        String errorMessage;
+                        if (exception != null) {
+                            errorMessage = "Sign up failed: " + exception.getMessage();
+                        } else {
+                            errorMessage = "Sign up failed due to an unknown error. Please try again.";
+                        }
+                        showToast(errorMessage);
+                    }
                 });
     }
+
 
     private String encodedImage(Bitmap bitmap) {
         int previewWidth = 150;

@@ -18,9 +18,12 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.messaging.FirebaseMessaging;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
 import ntu.maingochoanglong.tinichat.adapters.RecentConversationsAdapter;
 import ntu.maingochoanglong.tinichat.databinding.ActivityMainBinding;
@@ -78,10 +81,6 @@ public class MainActivity extends BaseActivity implements ConversionListener {
 
     private void listenConversations() {
         database.collection(Constants.KEY_COLLECTION_CONVERSATIONS)
-                .whereEqualTo(Constants.KEY_SENDER_ID, preferenceManager.getString(Constants.KEY_USER_ID))
-                .addSnapshotListener(eventListener);
-        database.collection(Constants.KEY_COLLECTION_CONVERSATIONS)
-                .whereEqualTo(Constants.KEY_RECEIVER_ID, preferenceManager.getString(Constants.KEY_USER_ID))
                 .addSnapshotListener(eventListener);
     }
 
@@ -90,44 +89,85 @@ public class MainActivity extends BaseActivity implements ConversionListener {
             return;
         }
         if (value != null) {
+            String currentUserId = preferenceManager.getString(Constants.KEY_USER_ID);
+
             for (DocumentChange documentChange : value.getDocumentChanges()) {
+                String senderId = documentChange.getDocument().getString(Constants.KEY_SENDER_ID);
+                String receiverId = documentChange.getDocument().getString(Constants.KEY_RECEIVER_ID);
+
+                if (!currentUserId.equals(senderId) && !currentUserId.equals(receiverId)) {
+                    continue;
+                }
+
+                String lastMessage = documentChange.getDocument().getString(Constants.KEY_LAST_MESSAGE);
+                Date timestamp = documentChange.getDocument().getDate(Constants.KEY_TIMESTAMP);
+                String displayMessage = currentUserId.equals(senderId) ? "You: " + lastMessage : lastMessage;
+
                 if (documentChange.getType() == DocumentChange.Type.ADDED) {
-                    String senderId = documentChange.getDocument().getString(Constants.KEY_SENDER_ID);
-                    String receiverId = documentChange.getDocument().getString(Constants.KEY_RECEIVER_ID);
+                    boolean exists = false;
+                    for (ChatMessage cm : conversations) {
+                        if ((cm.senderId.equals(senderId) && cm.receiverId.equals(receiverId)) ||
+                                (cm.senderId.equals(receiverId) && cm.receiverId.equals(senderId))) {
+                            exists = true;
+                            break;
+                        }
+                    }
+                    if (exists) continue;
+
                     ChatMessage chatMessage = new ChatMessage();
                     chatMessage.senderId = senderId;
                     chatMessage.receiverId = receiverId;
-                    if (preferenceManager.getString(Constants.KEY_USER_ID).equals(senderId)) {
+
+                    if (currentUserId.equals(senderId)) {
                         chatMessage.conversionImage = documentChange.getDocument().getString(Constants.KEY_RECEIVER_IMAGE);
                         chatMessage.conversionName = documentChange.getDocument().getString(Constants.KEY_RECEIVER_NAME);
-                        chatMessage.conversionId = documentChange.getDocument().getString(Constants.KEY_RECEIVER_ID);
+                        chatMessage.conversionId = receiverId;
                     } else {
                         chatMessage.conversionImage = documentChange.getDocument().getString(Constants.KEY_SENDER_IMAGE);
                         chatMessage.conversionName = documentChange.getDocument().getString(Constants.KEY_SENDER_NAME);
-                        chatMessage.conversionId = documentChange.getDocument().getString(Constants.KEY_SENDER_ID);
+                        chatMessage.conversionId = senderId;
                     }
-                    chatMessage.message = documentChange.getDocument().getString(Constants.KEY_LAST_MESSAGE);
-                    chatMessage.dateObject = documentChange.getDocument().getDate(Constants.KEY_TIMESTAMP);
-                    conversations.add(chatMessage);
-                } else if (documentChange.getType() == DocumentChange.Type.MODIFIED) {
+
+                    chatMessage.message = displayMessage;
+                    chatMessage.dataTime = getReadableDateTime(timestamp);
+                    chatMessage.dateObject = timestamp;
+
+                    conversations.add(0, chatMessage);
+                    conversationsAdapter.notifyItemInserted(0);
+                    binding.conversationsRecyclerView.smoothScrollToPosition(0);
+                }
+
+                else if (documentChange.getType() == DocumentChange.Type.MODIFIED) {
                     for (int i = 0; i < conversations.size(); i++) {
-                        String senderId = documentChange.getDocument().getString(Constants.KEY_SENDER_ID);
-                        String receiverId = documentChange.getDocument().getString(Constants.KEY_RECEIVER_ID);
-                        if (conversations.get(i).senderId.equals(senderId) && conversations.get(i).receiverId.equals(receiverId)) {
-                            conversations.get(i).message = documentChange.getDocument().getString(Constants.KEY_LAST_MESSAGE);
-                            conversations.get(i).dateObject = documentChange.getDocument().getDate(Constants.KEY_TIMESTAMP);
+                        ChatMessage cm = conversations.get(i);
+                        if ((cm.senderId.equals(senderId) && cm.receiverId.equals(receiverId)) ||
+                                (cm.senderId.equals(receiverId) && cm.receiverId.equals(senderId))) {
+
+                            cm.message = displayMessage;
+                            cm.dataTime = getReadableDateTime(timestamp);
+                            cm.dateObject = timestamp;
+
+                            conversations.remove(i);
+                            conversations.add(0, cm);
+                            conversationsAdapter.notifyItemMoved(i, 0);
+                            conversationsAdapter.notifyItemChanged(0);
+                            binding.conversationsRecyclerView.smoothScrollToPosition(0);
                             break;
                         }
                     }
                 }
             }
-            conversations.sort((obj1, obj2) -> obj2.dateObject.compareTo(obj1.dateObject));
-            conversationsAdapter.notifyDataSetChanged();
-            binding.conversationsRecyclerView.smoothScrollToPosition(0);
+
             binding.conversationsRecyclerView.setVisibility(View.VISIBLE);
             binding.progressBar.setVisibility(View.GONE);
         }
     };
+
+
+
+    private String getReadableDateTime(Date date) {
+        return new SimpleDateFormat("MMMM dd, yyyy - hh:mm a", Locale.getDefault()).format(date);
+    }
 
     private void getToken() {
         FirebaseMessaging.getInstance().getToken().addOnSuccessListener(this::updateToken);
