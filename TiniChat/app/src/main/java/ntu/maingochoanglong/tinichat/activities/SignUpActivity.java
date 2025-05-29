@@ -135,7 +135,10 @@ public class SignUpActivity extends AppCompatActivity {
                     if (result.getData() != null) {
                         Uri imageUri = result.getData().getData();
                         try {
-                            InputStream inputStream = getContentResolver().openInputStream(imageUri);
+                            InputStream inputStream = null;
+                            if (imageUri != null) {
+                                inputStream = getContentResolver().openInputStream(imageUri);
+                            }
                             Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
                             binding.imageProfile.setImageBitmap(bitmap);
                             binding.textAddImage.setVisibility(View.GONE);

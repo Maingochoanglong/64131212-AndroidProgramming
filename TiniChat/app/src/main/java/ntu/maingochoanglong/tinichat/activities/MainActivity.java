@@ -13,10 +13,8 @@ import androidx.activity.EdgeToEdge;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.EventListener;
-import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -24,6 +22,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import ntu.maingochoanglong.tinichat.adapters.RecentConversationsAdapter;
 import ntu.maingochoanglong.tinichat.databinding.ActivityMainBinding;
@@ -50,7 +49,6 @@ public class MainActivity extends BaseActivity implements ConversionListener {
         preferenceManager = new PreferenceManager(getApplicationContext());
         init();
         loadUserDetails();
-        getToken();
         setListeners();
         listenConversations();
     }
@@ -169,21 +167,6 @@ public class MainActivity extends BaseActivity implements ConversionListener {
         return new SimpleDateFormat("MMMM dd, yyyy - hh:mm a", Locale.getDefault()).format(date);
     }
 
-    private void getToken() {
-        FirebaseMessaging.getInstance().getToken().addOnSuccessListener(this::updateToken);
-    }
-
-    private void updateToken(String token) {
-        preferenceManager.putString(Constants.KEY_FCM_TOKEN, token);
-        FirebaseFirestore database = FirebaseFirestore.getInstance();
-        DocumentReference documentReference =
-                database.collection(Constants.KEY_COLLECTION_USERS).document(
-                        preferenceManager.getString(Constants.KEY_USER_ID)
-                );
-        documentReference.update(Constants.KEY_FCM_TOKEN, token)
-                .addOnFailureListener(e -> showToast("Unable to update token"));
-    }
-
     private void signOut() {
         showToast("Signing out...");
         FirebaseFirestore database = FirebaseFirestore.getInstance();
@@ -191,8 +174,7 @@ public class MainActivity extends BaseActivity implements ConversionListener {
                 database.collection(Constants.KEY_COLLECTION_USERS).document(
                         preferenceManager.getString(Constants.KEY_USER_ID)
                 );
-        HashMap<String, Object> updates = new HashMap<>();
-        updates.put(Constants.KEY_FCM_TOKEN, FieldValue.delete());
+        Map<String, Object> updates = new HashMap<>();
         documentReference.update(updates)
                 .addOnSuccessListener(unused -> {
                     preferenceManager.clear();
