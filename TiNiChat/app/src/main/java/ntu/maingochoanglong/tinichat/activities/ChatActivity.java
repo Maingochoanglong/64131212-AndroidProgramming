@@ -4,9 +4,12 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.firebase.firestore.DocumentChange;
@@ -15,6 +18,8 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
+
+import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -30,8 +35,15 @@ import ntu.maingochoanglong.tinichat.adapters.ChatAdapter;
 import ntu.maingochoanglong.tinichat.databinding.ActivityChatBinding;
 import ntu.maingochoanglong.tinichat.models.ChatMessage;
 import ntu.maingochoanglong.tinichat.models.User;
+import ntu.maingochoanglong.tinichat.servers.ApiClient;
+import ntu.maingochoanglong.tinichat.servers.ApiService;
 import ntu.maingochoanglong.tinichat.utilities.Constants;
 import ntu.maingochoanglong.tinichat.utilities.PreferenceManager;
+import okhttp3.MediaType;
+import okhttp3.RequestBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ChatActivity extends BaseActivity {
 
@@ -84,8 +96,54 @@ public class ChatActivity extends BaseActivity {
         } else {
             addConversion(textMessage);
         }
+        if (!isReceiverAvailable) {
+            try {
+                JSONObject body = new JSONObject();
+                body.put("title", preferenceManager.getString(Constants.KEY_NAME));
+                body.put("body", textMessage);
+                body.put("token", "d_C8GoTzRjaf4PMm8tnbRB:APA91bEl-tegeCDeg2WkQU9PEPmhv8ppCSzfzys2EaLU5iPfbRoJ7ck8a359UNcG6KRc-YqhtEATU8o82BUG5YHrMd_5Kl620A-QmRxIMuz2An5lZX-IgEI");
+
+                RequestBody requestBody = RequestBody.create(
+                        body.toString(),
+                        MediaType.parse("application/json; charset=utf-8")
+                );
+
+                sendNotification(requestBody);
+            } catch (Exception e) {
+                showToast(e.getMessage());
+            }
+        }
         binding.inputMessage.setText(null);
     }
+
+    private void showToast(String message) {
+        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
+    }
+
+    private void sendNotification(RequestBody requestBody) {
+        Log.d("SEND_NOTIFICATION", "Sending notification: " + requestBody.toString());
+        ApiClient.getClient().create(ApiService.class).sendMessage(requestBody)
+                .enqueue(new Callback<String>() {
+                    @Override
+                    public void onResponse(@NonNull Call<String> call, @NonNull Response<String> response) {
+                        Log.d("API_RESPONSE", "Response code: " + response.code());
+                        if (response.isSuccessful()) {
+                            Log.d("API_RESPONSE", "Body: " + response.body());
+                            showToast("Notification sent successfully");
+                        } else {
+                            showToast("Error: " + response.code());
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(@NonNull Call<String> call, @NonNull Throwable t) {
+                        Log.e("API_FAILURE", t.getMessage(), t);
+                        showToast("Failed to send notification: " + t.getMessage());
+                    }
+                });
+    }
+
+
 
     private void listenAvailabilityOfReceiver() {
         database.collection(Constants.KEY_COLLECTION_USERS).document(
@@ -101,6 +159,7 @@ public class ChatActivity extends BaseActivity {
                     ).intValue();
                     isReceiverAvailable = availability == 1;
                 }
+                receiverUser.token = value.getString(Constants.KEY_FCM_TOKEN);
             }
             if (isReceiverAvailable) {
                 binding.textAvailability.setVisibility(View.VISIBLE);
