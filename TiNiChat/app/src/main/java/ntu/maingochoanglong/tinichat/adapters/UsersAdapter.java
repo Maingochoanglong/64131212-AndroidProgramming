@@ -65,4 +65,5 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserViewHold
         byte[] bytes = Base64.decode(encodedImage, Base64.DEFAULT);
         return BitmapFactory.decodeByteArray(bytes,0,bytes.length);
     }
+
 }

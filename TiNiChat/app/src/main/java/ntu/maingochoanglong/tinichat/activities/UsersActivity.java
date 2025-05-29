@@ -2,6 +2,8 @@ package ntu.maingochoanglong.tinichat.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 
 import androidx.activity.EdgeToEdge;
@@ -23,6 +25,8 @@ public class UsersActivity extends BaseActivity implements UserListener {
 
     private ActivityUsersBinding binding;
     private PreferenceManager preferenceManager;
+    private List<User> allUsers;
+    private UsersAdapter usersAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,14 +36,44 @@ public class UsersActivity extends BaseActivity implements UserListener {
         setContentView(binding.getRoot());
         preferenceManager = new PreferenceManager(getApplicationContext());
         setListeners();
-        getUser();
+        getUsers();
     }
 
     private void setListeners() {
         binding.imageBack.setOnClickListener(v -> getOnBackPressedDispatcher().onBackPressed());
+
+        binding.imageSearch.setOnClickListener(v -> {
+            if (binding.inputSearch.getVisibility() == View.VISIBLE) {
+                binding.inputSearch.setVisibility(View.GONE);
+                binding.inputSearch.setText(null);
+                binding.textSelectUser.setVisibility(View.VISIBLE);
+                showAllUsers();
+            } else {
+                binding.inputSearch.setVisibility(View.VISIBLE);
+                binding.textSelectUser.setVisibility(View.GONE);
+                binding.inputSearch.requestFocus();
+            }
+        });
+
+        binding.inputSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                filterUsers(s.toString().trim());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
     }
 
-    private void getUser() {
+    private void getUsers() {
         loading(true);
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         database.collection(Constants.KEY_COLLECTION_USERS)
@@ -48,7 +82,7 @@ public class UsersActivity extends BaseActivity implements UserListener {
                     loading(false);
                     String currentUserId = preferenceManager.getString(Constants.KEY_USER_ID);
                     if (task.isSuccessful() && task.getResult() != null) {
-                        List<User> users = new ArrayList<>();
+                        allUsers = new ArrayList<>();
                         for (QueryDocumentSnapshot queryDocumentSnapshot : task.getResult()) {
                             if (currentUserId.equals(queryDocumentSnapshot.getId())) {
                                 continue;
@@ -58,12 +92,10 @@ public class UsersActivity extends BaseActivity implements UserListener {
                             user.email = queryDocumentSnapshot.getString(Constants.KEY_EMAIL);
                             user.image = queryDocumentSnapshot.getString(Constants.KEY_IMAGE);
                             user.id = queryDocumentSnapshot.getId();
-                            users.add(user);
+                            allUsers.add(user);
                         }
-                        if (!users.isEmpty()) {
-                            UsersAdapter usersAdapter = new UsersAdapter(users,this);
-                            binding.usersRecyclerView.setAdapter(usersAdapter);
-                            binding.usersRecyclerView.setVisibility(View.VISIBLE);
+                        if (!allUsers.isEmpty()) {
+                            showAllUsers();
                         } else {
                             showErrorMessage();
                         }
@@ -71,6 +103,28 @@ public class UsersActivity extends BaseActivity implements UserListener {
                         showErrorMessage();
                     }
                 });
+    }
+
+    private void showAllUsers() {
+        usersAdapter = new UsersAdapter(allUsers, this);
+        binding.usersRecyclerView.setAdapter(usersAdapter);
+        binding.usersRecyclerView.setVisibility(View.VISIBLE);
+    }
+
+    private void filterUsers(String keyword) {
+        if (keyword != null) {
+            List<User> filteredList = new ArrayList<>();
+            for (User user : allUsers) {
+                if (user.name.toLowerCase().contains(keyword.toLowerCase()) ||
+                        user.email.toLowerCase().contains(keyword.toLowerCase())) {
+                    filteredList.add(user);
+                }
+            }
+            if (!filteredList.isEmpty()) {
+                usersAdapter = new UsersAdapter(filteredList, this);
+                binding.usersRecyclerView.setAdapter(usersAdapter);
+            }
+        }
     }
 
     private void showErrorMessage() {
