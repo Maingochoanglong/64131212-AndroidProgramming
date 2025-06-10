@@ -34,7 +34,6 @@ import ntu.maingochoanglong.tinichat.utilities.Constants;
 import ntu.maingochoanglong.tinichat.utilities.PreferenceManager;
 
 public class ChatActivity extends BaseActivity {
-
     private ActivityChatBinding binding;
     private User receiverUser;
     private List<ChatMessage> chatMessages;
@@ -69,20 +68,25 @@ public class ChatActivity extends BaseActivity {
     }
 
     private void sendMessage() {
-        String textMessage = binding.inputMessage.getText().toString();
-        if (textMessage.isEmpty()) {
-            return;
-        }
         Map<String, Object> message = new HashMap<>();
         message.put(Constants.KEY_SENDER_ID, preferenceManager.getString(Constants.KEY_USER_ID));
         message.put(Constants.KEY_RECEIVER_ID, receiverUser.id);
-        message.put(Constants.KEY_MESSAGE, textMessage);
+        message.put(Constants.KEY_MESSAGE, binding.inputMessage.getText().toString());
         message.put(Constants.KEY_TIMESTAMP, new Date());
         database.collection(Constants.KEY_COLLECTION_CHAT).add(message);
         if (conversionId != null) {
-            updateConversion(textMessage);
+            updateConversion(binding.inputMessage.getText().toString());
         } else {
-            addConversion(textMessage);
+            HashMap<String, Object> conversion = new HashMap<>();
+            conversion.put(Constants.KEY_SENDER_ID, preferenceManager.getString(Constants.KEY_USER_ID));
+            conversion.put(Constants.KEY_SENDER_NAME, preferenceManager.getString(Constants.KEY_NAME));
+            conversion.put(Constants.KEY_SENDER_IMAGE, preferenceManager.getString(Constants.KEY_IMAGE));
+            conversion.put(Constants.KEY_RECEIVER_ID, receiverUser.id);
+            conversion.put(Constants.KEY_RECEIVER_NAME, receiverUser.name);
+            conversion.put(Constants.KEY_RECEIVER_IMAGE, receiverUser.image);
+            conversion.put(Constants.KEY_LAST_MESSAGE, binding.inputMessage.getText().toString());
+            conversion.put(Constants.KEY_TIMESTAMP, new Date());
+            addConversion(conversion);
         }
         binding.inputMessage.setText(null);
     }
@@ -140,9 +144,9 @@ public class ChatActivity extends BaseActivity {
             }
             chatMessages.sort(Comparator.comparing(obj -> obj.dateObject));
             if (count == 0) {
-                chatAdapter.notifyItemRangeInserted(count, chatMessages.size());
+                chatAdapter.notifyDataSetChanged();
             } else {
-                chatAdapter.notifyItemRangeInserted(count, chatMessages.size() - count);
+                chatAdapter.notifyItemRangeInserted(chatMessages.size(), chatMessages.size());
                 binding.chatRecyclerView.smoothScrollToPosition(chatMessages.size() - 1);
             }
             binding.chatRecyclerView.setVisibility(View.VISIBLE);
@@ -187,30 +191,20 @@ public class ChatActivity extends BaseActivity {
         return new SimpleDateFormat("MMMM dd, yyyy - hh:mm a", Locale.getDefault()).format(date);
     }
 
-    private void addConversion(String message) {
+    private void addConversion(HashMap<String, Object> conversion) {
         database.collection(Constants.KEY_COLLECTION_CONVERSATIONS)
-                .add(getConversionData(message))
+                .add(conversion)
                 .addOnSuccessListener(documentReference -> conversionId = documentReference.getId());
     }
 
     private void updateConversion(String message) {
-        DocumentReference documentReference = database.collection(Constants.KEY_COLLECTION_CONVERSATIONS).document(conversionId);
-        documentReference.update(getConversionData(message));
+        DocumentReference documentReference =
+                database.collection(Constants.KEY_COLLECTION_CONVERSATIONS).document(conversionId);
+        documentReference.update(
+                Constants.KEY_LAST_MESSAGE, message,
+                Constants.KEY_TIMESTAMP, new Date()
+        );
     }
-
-    private Map<String, Object> getConversionData(String lastMessage) {
-        Map<String, Object> conversion = new HashMap<>();
-        conversion.put(Constants.KEY_SENDER_ID, preferenceManager.getString(Constants.KEY_USER_ID));
-        conversion.put(Constants.KEY_SENDER_NAME, preferenceManager.getString(Constants.KEY_NAME));
-        conversion.put(Constants.KEY_SENDER_IMAGE, preferenceManager.getString(Constants.KEY_IMAGE));
-        conversion.put(Constants.KEY_RECEIVER_ID, receiverUser.id);
-        conversion.put(Constants.KEY_RECEIVER_NAME, receiverUser.name);
-        conversion.put(Constants.KEY_RECEIVER_IMAGE, receiverUser.image);
-        conversion.put(Constants.KEY_LAST_MESSAGE, lastMessage);
-        conversion.put(Constants.KEY_TIMESTAMP, new Date());
-        return conversion;
-    }
-
 
     private void checkForConversionRemotely(String senderId, String receiverId) {
         database.collection(Constants.KEY_COLLECTION_CONVERSATIONS)
